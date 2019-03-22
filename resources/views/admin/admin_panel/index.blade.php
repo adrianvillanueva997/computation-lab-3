@@ -1,27 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card">
-        <div class="card-body">
-            <div class="card-header"> Bienvenido - Sistema de gestión de incidencias</div>
-
-            <div class="card-body">
-                @if (session('notification'))
-                    <div class="alert alert-success">
-                        {{ session('notification') }}
-                    </div>
-                @endif
-
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-            </div>
+<div class="container">
+      <!-- Sidebar -->
+      <div class="row">
+        <div class="col-md-3">
+        <div class="card"><div class="card-body"><div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">Menú de Administración</div>
+              <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Usuarios</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Mensajes</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Reportes</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Ajustes</a>
+              </div>
+          </div>
         </div>
+      </div>
     </div>
-    @endif
+          
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                  @yield('content')
+                </div>
+              </div>
+        </div>
+      </div>
+
+</div>
+ 
+  
+ 
 @endsection
