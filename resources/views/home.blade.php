@@ -15,6 +15,8 @@
                         @if(Auth::user()->isAdmin())
                             <a href="/admin_home">Hola</a>
                             You are logged in!
+                        @else
+                        <a href="/user_home">Hola usuario</a>
                         @endif
                     </div>
                 </div>

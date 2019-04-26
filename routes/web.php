@@ -18,6 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/admin_home', 'AdminPanelController@index');
 });
+
+Route::group(['middleware' => 'user', 'namespace' => 'User'], function(){
+    Route::get('/user_home', 'UserPanelController@index');
+    Route::get('/crear_propuesta', 'UserPanelController@crear_propuesta');
+
+});
+
