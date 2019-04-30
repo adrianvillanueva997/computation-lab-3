@@ -1,33 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><!--shrink-to fit=no-->
-    <!-- css links -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css">
-    
-    <!-- js scripts -->
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
-    <script src="javascript.js"></script>
-    
-    <title>HomePage</title>
-    
-</head>
-<body>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"><!--shrink-to fit=no-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css">
+    </head>
+    <body>
 
-<!--Container (section Navbar)-->
-<nav class="navbar navbar-expand-lg px-5">
+    <!-- Top NAVBAR -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark px-5">
       <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="navbar-brand" href="#myPage">Logo</a>
+         <div class="search-container">
+                    <form action="/action_page.php">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
         </li>
       </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -35,17 +27,12 @@
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav list-group-horizontal ml-auto">
-            <li class="nav-item mx-2">
+             
+              <li class="nav-item mx-2">
               <a class="nav-link" href="#help">Help</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#catalogo">Catalogo</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="#populares">Populares</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="#contact">Contacta</a>
+              <a class="nav-link" href="#freelance">Freelance</a>
             </li>
             <li class="nav-item mx-2">
               <a class="nav-link" href="#entrar">Entra</a>
@@ -56,202 +43,184 @@
           </ul>
         </div>
     </nav>
+    
+    <!-- Home Carousel -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3" id="border">
+                <h1>Sobre nosotros</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="col-sm-9" id="border">
+               <div class="row">
+                   <div class="col-sm-12">
+                       <img src="img/home-carousel-1.png" alt="homeIMG" id="homeIMG">
+                   </div>
+               </div>
+                
+            </div>
+        </div>
+        
+        <!-- contadores de users/freelancers/projects -->
+        <div class="row mt-2">
+           <div class="col-sm-12 pl-5 pt-3 pb-1">
+               <h4>Actividad:</h4>
+           </div>
+            <div class="col-sm-4" id="border">
+                <div class="row">
+                   <div class="col-sm-2"></div>
+                    <div class="col-sm-8 border border-success">
+                        <i class="fa fa-user-circle" style="font-size:128px"></i>
+                        <h6 id="textIcon">7398</h6>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </div>
+            <div class="col-sm-4" id="border">
+                <div class="row">
+                   <div class="col-sm-2"></div>
+                    <div class="col-sm-8 border border-success">
+                        <i class="fa fa-user" style="font-size:128px"></i>
+                        <h6 id="textIcon">347</h6>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </div>
+            <div class="col-sm-4" id="border">
+                <div class="row">
+                   <div class="col-sm-2"></div>
+                    <div class="col-sm-8 border border-success">
+                        <i class="fa fa-archive" style="font-size:128px"></i>
+                        <h6 id="textIcon">18054</h6>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- catalogo -->
+    <div class="container-fluid">
+        <div class="row justify-content-center mt-2">
+           <div class="col-sm-12 pl-5 pt-3 pb-1">
+               <h4>Catalogo: </h4>
+           </div>
+            <div class="col-2" id="border">
+                <i class="fa fa-amazon" style="font-size:48px"></i>
+                <p>Marketing</p>
+            </div>
+            <div class="col-2" id="border">
+                <i class="fa fa-github" style="font-size:48px"></i>
+                <p>Git</p>
+            </div>
+            <div class="col-2" id="border">
+                <i class="fa fa-google-plus" style="font-size:48px"></i>
+                <p>Google+</p>
+            </div>
+            <div class="col-2" id="border">
+                <i class="fa fa-css3" style="font-size:48px"></i>
+                <p>Web dev</p>
+            </div>
+            <div class="col-2 " id="border">
+                <i class="fa fa-btc" style="font-size:48px"></i>
+                <p>Trading</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- proyectos mas populares -->
+    <div class="container-fluid ">
+        <div class="row justify-content-center">
+           <div class="col-sm-12 pl-5 pt-3 pb-1">
+               <h4>Proyectos mas populares: </h4>
+           </div>
+            <div class="col-sm-4" id="border">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="list-group" id="list-group-border-project">
+                                <li class="list-group-item"><i class="fa fa-chrome" style="font-size:208px" id="border"></i></li>
+                                <il class="list-group-item" id="list-item-left">Nombre del proyecto</il>
+                                <il class="list-group-item" id="list-item-left">Nombre del autor</il>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4" id="border">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="list-group" id="list-group-border-project">
+                                <li class="list-group-item"><i class="fa fa-edge" style="font-size:208px" id="border"></i></li>
+                                <il class="list-group-item" id="list-item-left">Nombre del proyecto</il>
+                                <il class="list-group-item" id="list-item-left">Nombre del autor</il>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4" id="border">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="list-group" id="list-group-border-project">
+                                <li class="list-group-item"><i class="fa fa-firefox" style="font-size:208px" id="border"></i></li>
+                                <il class="list-group-item" id="list-item-left">Nombre del proyecto</il>
+                                <il class="list-group-item" id="list-item-left">Nombre del autor</il>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- como funciona -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 pl-5 pt-3 pb-1">
+               <h4>Proyectos mas populares: </h4>
+           </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>About Company Page</h2>
+          <h4>Lorem ipsum..</h4>      
+          <p>Lorem ipsum..</p>
+          <button class="btn btn-warning btn-lg">Get in Touch</button>
+        </div>
+        <div class="col-sm-4">
+            <span class="fa fa-css3" id="logo"></span>
+        </div>
+      </div>
+      
+      <div class="container-fluid bg-grey">
+          <div class="row">
+            <div class="col-sm-4">
+              <i class="fa fa-chrome" id="logo"></i>
+            </div>
+            <div class="col-sm-8">
+              <h2>Our Values</h2>
+              <h4><strong>MISSION:</strong> Our mission lorem ipsum..</h4>      
+              <p><strong>VISION:</strong> Our vision Lorem ipsum..</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!--
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#myPage">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#portfolio">PORTFOLIO</a></li>
-        <li><a href="#pricing">PRICING</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 -->
 
-<!--Container (section Home)-->
-<div class="jumbotron text-center">
-  <h1>Freelaunch</h1> 
-  <p>El mejor portal freelancer de Espanha!</p>
-  <form class="form-inline">
-    <div class="input-group">
-      <input type="search" class="form-control" size="50" placeholder="Search..." required>
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-danger">
-            <i class="fa fa-search" style='font-size:20px'></i>
-        </button>
-      </div>
-    </div>
-  </form>
-</div>
-
-<!--Container (section Catalogo)-->
-<div id="catalogo" class="container-fluid text-center">
-  <h2>Catalogo</h2>
-  <h4>Lo que ofrecemos</h4>
-  <br>
-  <div class="row">
-    <div class="col-sm-4">
-      <span class="fa fa-css3" id="logo-small"></span>
-      <h4>Web Dev</h4>
-      <p>Breve descripcion (posible)</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="fa fa-css3" id="logo-small"></span>
-      <h4>Mobile Dev</h4>
-      <p>Breve descripcion (posible)</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="fa fa-css3" id="logo-small"></span>
-      <h4>Photoshop</h4>
-      <p>Breve descripcion (posible)</p>
-    </div>
-  </div>
-  <br><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <span class="fa fa-css3" id="logo-small"></span>
-      <h4>Logo</h4>
-      <p>Breve descripcion (posible)</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="fa fa-css3" id="logo-small"></span>
-      <h4>Marketing</h4>
-      <p>Breve descripcion (posible)</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="fa fa-css3" id="logo-small"></span>
-      <h4>Blog</h4>
-      <p>Breve descripcion (posible)</p>
-    </div>
-  </div>
-</div>
-
-<!--Container (section Populares)-->
-<div id="populares" class="container-fluid text-center bg-grey">
-  <h2>Mas Populares</h2><br>
-  <div class="row text-center">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="img/home-carousel-1.png" alt="Paris" width="400" height="300" class="img-thumbnail">
-        <p><strong>Nombre del Proyecto</strong></p>
-        <p>Nombre del autor</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="img/home-carousel-2.jpg" alt="New York" width="400" height="300" class="img-thumbnail">
-        <p><strong>Nombre del Proyecto</strong></p>
-        <p>Nombre del autor</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="img/home-carousel-3.jpg" alt="San Francisco" width="400" height="300" class="img-thumbnail">
-        <p><strong>Nombre del Proyecto</strong></p>
-        <p>Nombre del autor</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--
-Container (section Actividad)
-<div class="container-fluid text-center">
-  <h2>Actividad</h2><br>
-  <div class="row text-center">
-    <div class="col-sm-4">
-     <div class="thumbnail">
-         <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <i class="fa fa-user-circle" style="font-size:300px"></i>
-            </div>
-            <div class="flip-card-back py-5">
-              <h1><strong>Usuarios</strong></h1> 
-              <h3>7398</h3>
-            </div>
-          </div>
-        </div>
-     </div>
-    </div>
-    <div class="col-sm-4">
-     <div class="thumbnail">
-         <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <i class="fa fa-user " style="font-size:300px"></i>
-            </div>
-            <div class="flip-card-back py-5">
-              <h1><strong>Freelancers</strong></h1> 
-              <h3>347</h3>
-            </div>
-          </div>
-        </div>
-     </div>
-    </div>
-    <div class="col-sm-4">
-     <div class="thumbnail">
-         <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <i class="fa fa-archive" style="font-size:300px"></i>
-            </div>
-            <div class="flip-card-back py-5">
-              <h1><strong>Proyectos</strong></h1> 
-              <h3>18054</h3>
-            </div>
-          </div>
-        </div>
-     </div>
-    </div>
-  </div>
-</div>
--->
-
-<!--Container (section Contact)-->
-<div id="contact" class="container-fluid">
-  <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p> <span class="fa fa-css3" id="logo-xsmall"></span> Monte Pinar, ZP</p>
-      <p> <span class="fa fa-css3" id="logo-xsmall"></span> +34 918903892</p>
-      <p> <span class="fa fa-css3" id="logo-xsmall"></span> freelaunchweb@gmail.com</p>
-    </div>
-    <div class="col-sm-7">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit" id="color">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--Imagen localizacion/mapa-->
-<!--<div id="googleMap" style="width:100%;height:400px;"></div>-->
-<img src="img/map.jpg" class="img-responsive" style="width:100%">
-
-</body>
+    </body>
 </html>
+
