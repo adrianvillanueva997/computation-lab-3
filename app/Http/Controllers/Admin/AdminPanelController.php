@@ -9,13 +9,13 @@ class AdminPanelController extends Controller
 {
     public function index()
     {
-        return view('admin.admin_panel.index');
+        $usuarios = User::all();
+        return view('admin.admin_panel.index')->with(compact('usuarios'));
     }
 
     public function user_panel()
     {
-        $usuarios = User::all();
-        return view('admin.admin_panel.panel_usuarios')->with(compact('usuarios'));
+        return view('admin.admin_panel.panel_usuarios');
     }
 
 }

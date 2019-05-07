@@ -1,24 +1,28 @@
 @section('tabla')
     <div class="tabla_usuarios">
-        <p>esto es un test</p>
+        <h1>Tabla de usuarios</h1>
         <table style="width:100%">
             <tr>
                 <th>ID</th>
                 <th>Usuario</th>
                 <th>Email</th>
+                <th>Role</th>
+                <th>Modificar Usuario</th>
             </tr>
 
-            <tr>
-                @foreach($usuarios as $user)
-                @endforeach
-                <td>1</td>
-                <td>Adrian</td>
-                <td>adriango@gmail.com</td>
-            </tr>
-            <tr>
-                <td>February</td>
-                <td>$50</td>
-            </tr>
+            @foreach($usuarios as $user)
+                <tr>
+                    <td>{{$user->id}}</td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->role}}</td>
+                    <td><a href="">
+                            <object data="../../../../resources/img/baseline-edit-24px.svg"
+                                    type="image/svg+xml"></object>
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
         </table>
     </div>
 @endsection
