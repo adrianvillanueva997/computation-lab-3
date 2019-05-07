@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class AdminPanelController extends Controller
 {
@@ -11,4 +11,11 @@ class AdminPanelController extends Controller
     {
         return view('admin.admin_panel.index');
     }
+
+    public function user_panel()
+    {
+        $usuarios = User::all();
+        return view('admin.admin_panel.panel_usuarios')->with(compact('usuarios'));
+    }
+
 }

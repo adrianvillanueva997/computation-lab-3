@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/admin_home', 'AdminPanelController@index');
+    Route::get('/panel_usuarios','AdminPanelController@user_panel');
 });
 
 Route::group(['middleware' => 'user', 'namespace' => 'User'], function(){
@@ -28,4 +29,5 @@ Route::group(['middleware' => 'user', 'namespace' => 'User'], function(){
     Route::get('/crear_propuesta', 'UserPanelController@crear_propuesta');
 
 });
+
 
