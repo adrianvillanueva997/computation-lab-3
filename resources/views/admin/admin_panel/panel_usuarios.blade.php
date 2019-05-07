@@ -16,10 +16,8 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->role}}</td>
-                    <td><a href="">
-                            <object data="../../../../resources/img/baseline-edit-24px.svg"
-                                    type="image/svg+xml"></object>
-                        </a>
+                    <td><a href=""><img src="../../../../resources/img/baseline-edit-24px.svg"
+                                        alt="Editar usuario"></a>
                     </td>
                 </tr>
             @endforeach
