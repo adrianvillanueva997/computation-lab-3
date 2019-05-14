@@ -1,26 +1,25 @@
-@section('tabla_usuarios')
-    <div class="tabla_usuarios">
-        <h1>Usuarios</h1>
+@section('tabla_propuestas')
+    <div class="tabla_propuestas">
+        <h1>Propuestas</h1>
         <table style="width:100%">
             <tr>
                 <th>ID</th>
                 <th>Usuario</th>
-                <th>Email</th>
-                <th>Role</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Tags</th>
+                <th>Creado</th>
+                <th>Última modificación</th>
                 <th>Modificar</th>
                 <th>Eliminar</th>
             </tr>
-
-            @foreach($usuarios as $user)
+            @for($i=0;$i<$propuestas;$i++)
                 <tr>
-                    <td>{{$user->id}}</td>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->role}}</td>
+                    <td>asdasda</td>
                     <td><a href="#"><img src="/img/edit_icon_admin.png"></a></td>
                     <td><a href=""><img src="/img/delete_icon_admin.png"></a></td>
                 </tr>
-            @endforeach
+            @endfor
         </table>
     </div>
 @endsection
