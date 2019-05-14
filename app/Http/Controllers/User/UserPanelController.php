@@ -4,6 +4,9 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Proposal;
+use Auth;
+
 
 class UserPanelController extends Controller
 {
@@ -24,6 +27,8 @@ class UserPanelController extends Controller
         return view('user.user_panel.mensajes');
     }
     public function ver_propuesta(){
-        return view('user.user_panel.verpropuesta');
+        $id=Auth::user()->getId();
+        $propuestas=Proposal::where('id_user', $id)->get();
+        return view('user.user_panel.verpropuesta')-> with('propuestas', $propuestas);
     }
 }
