@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], function () {
 Route::group(['middleware' => 'user', 'namespace' => 'User'], function(){
     Route::get('/user_home', 'UserPanelController@index');
     Route::get('/crear_propuesta', 'UserPanelController@crear_propuesta');
-
+    Route::post('/subir_propuesta', 'PropuestaControlador@insert');
+    Route::get('/verpropuesta', 'UserPanelController@ver_propuesta');
+    Route::get('/mensaje', 'UserPanelController@mensaje');
 });
 

@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function isAdmin(){
         return $this->role == 0;
     }
+
+    public function getId(){
+        return $this->id;
+    }
 }

@@ -9,8 +9,8 @@
             <div class="sidebar-heading">Menú de Usuario</div>
               <div class="list-group list-group-flush">
                 <a href="/crear_propuesta" class="list-group-item list-group-item-action bg-light">Nueva Propuesta</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Mensajes</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Mensajes</a>
+                <a href="/mensaje" class="list-group-item list-group-item-action bg-light">Mensajes</a>
+                <a href="/verpropuesta" class="list-group-item list-group-item-action bg-light">Propuestas</a>
                 <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Reportes</a> -->
                 <a href="#" class="list-group-item list-group-item-action bg-light">Ajustes</a>
               </div>
@@ -18,7 +18,6 @@
         </div>
       </div>
     </div>
-          
         <div class="col-md-9">
             <div class="card">
                 <div class="card-body">

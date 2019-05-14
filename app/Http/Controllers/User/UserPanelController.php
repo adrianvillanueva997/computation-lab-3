@@ -20,4 +20,10 @@ class UserPanelController extends Controller
         return view('user.user_panel.crearpropuesta');
         
     }
+    public function mensaje(){
+        return view('user.user_panel.mensajes');
+    }
+    public function ver_propuesta(){
+        return view('user.user_panel.verpropuesta');
+    }
 }
