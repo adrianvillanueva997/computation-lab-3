@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', static function () {
     return view('welcome');
 });
 
@@ -20,15 +20,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], function () {
+Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], static function () {
     Route::get('/admin_home', 'AdminPanelController@index');
+    Route::get('/panel_usuarios', 'AdminPanelController@user_panel');
+    Route::get('/editar_usuario', 'AdminPanelController@user_panel');
 });
 
-Route::group(['middleware' => 'user', 'namespace' => 'User'], function(){
+Route::group(['middleware' => 'user', 'namespace' => 'User'], static function () {
     Route::get('/user_home', 'UserPanelController@index');
     Route::get('/crear_propuesta', 'UserPanelController@crear_propuesta');
     Route::post('/subir_propuesta', 'PropuestaControlador@insert');
     Route::get('/verpropuesta', 'UserPanelController@ver_propuesta');
     Route::get('/mensaje', 'UserPanelController@mensaje');
 });
+
 
