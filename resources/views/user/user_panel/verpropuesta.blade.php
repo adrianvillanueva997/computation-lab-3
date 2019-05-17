@@ -7,17 +7,21 @@
                 <table class="table">
                     <thead>
                         <tr>
+                        <th scope="col">ID</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Tags</th>
+                        <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($propuestas as $propuesta)
                             <tr>
+                                <td>{!! $propuesta->id !!}</td>
                                 <td>{!! $propuesta->name !!}</td>
                                 <td>{!! $propuesta->description !!}</td>
                                 <td>{!! $propuesta->tags !!}</td>
+                                <td><a href="/formulariomodificacion_propuesta/{{$propuesta->id}}" class="btn btn-primary">Editar</a></td>
                             </tr>
                         @endforeach
                     </tbody>

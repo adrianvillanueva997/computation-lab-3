@@ -32,6 +32,8 @@ Route::group(['middleware' => 'user', 'namespace' => 'User'], static function ()
     Route::post('/subir_propuesta', 'PropuestaControlador@insert');
     Route::get('/verpropuesta', 'UserPanelController@ver_propuesta');
     Route::get('/mensaje', 'UserPanelController@mensaje');
+    Route::get('/formulariomodificacion_propuesta/{id}','UserPanelController@modificar_propuesta');
+    Route::post('updatepropuesta/{id}','PropuestaControlador@update_propuesta');
 });
 
 

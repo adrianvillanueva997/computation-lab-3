@@ -20,4 +20,12 @@ class PropuestaControlador extends Controller
         $proposal->save();
         return back()->with('notification','Propuesta creada correctamente');
     }
+    public function update_propuesta ($id, Request $request){
+        $proposal = Proposal::find($id);
+        $proposal->name= $request->input('name');
+        $proposal->description= $request->input('description');
+        $proposal->tags= $request->input('tags');
+        $proposal->save();
+        return back()->with('notification','Propuesta creada correctamente');
+    }
 }
