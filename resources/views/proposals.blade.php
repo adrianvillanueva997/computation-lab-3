@@ -40,16 +40,8 @@
             <li class="nav-item mx-2">
               <a class="nav-link" href="#perfil">Perfil</a>
             </li>
-<!-- Estos dos items "sobran" en principio
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="#catalogo">Catalogo</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="#populares">Populares</a>
-            </li>
--->			
 			<li class="nav-item mx-2">
-              <a class="nav-link" href="servicePage.html">Ver proyectos</a>
+              <a class="nav-link" href="/proposals">Ver proyectos</a>
             </li>
             <li class="nav-item mx-2">
               <a class="nav-link" href="#contact">Contacta</a>
@@ -92,79 +84,20 @@
   <h1 class="my-4">Proyectos</h1>
 
   <div class="row">
+  @foreach($propuestas as $propuesta)
     <div class="col-lg-4 col-sm-6 mb-4">
       <div class="card h-100">
         <a href="individualServicePage.html"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
         <div class="card-body">
           <h4 class="card-title">
-            <a href="individualServicePage.html">Nombre Proyecto 1</a>
+            <a href="individualServicePage.html">{{$propuesta->name}}</a>
           </h4>
           <h6 class="card-text font-weight-bold">Descripcion</h6>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+          <p class="card-text">{{$propuesta->description}}</p>
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="individualServicePage.html">Nombre Proyecto 2</a>
-          </h4>
-          <h6 class="card-text font-weight-bold">Descripcion</h6>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Nihil, dolorem!</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="individualServicePage.html">Nombre Proyecto 3</a>
-          </h4>
-          <h6 class="card-text font-weight-bold">Descripcion</h6>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="individualServicePage.html">Nombre Proyecto 4</a>
-          </h4>
-          <h6 class="card-text font-weight-bold">Descripcion</h6>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="individualServicePage.html">Nombre Proyecto 5</a>
-              </h4>
-              <h6 class="card-text font-weight-bold">Descripcion</h6>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit.</p>
-            </div>
-        </div>
-      </div>
-    <div class="col-lg-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="individualServicePage.html">Nombre Proyecto 6</a>
-          </h4>
-          <h6 class="card-text font-weight-bold">Descripcion</h6>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  @endforeach
   <!-- /.row -->
   
 
