@@ -145,17 +145,34 @@
         </div>
 <!--       /ModalPerfil-->
             <li class="nav-item mx-2">
-              <a class="nav-link" href="./html/servicePage.html">Ver proyectos</a>
+              <a class="nav-link" href="/propuestas">Ver propuestas</a>
             </li>
             <li class="nav-item mx-2">
               <a class="nav-link" href="#contacta">Contacta</a>
             </li>
+            @guest
             <li class="nav-item mx-2">
               <a class="nav-link" href="/login">Entra</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="html/register.html">Registrarse</a>
+              <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
             </li>
+            @else
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/user_home">Mi perfil</a>
+            </li>
+            <li class="nav-item mx-2">
+                                    <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Cerrar sesión') }}
+                                    </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+            </form>
+            </li>
+            @endguest
           </ul>
         </div>
     </nav>
