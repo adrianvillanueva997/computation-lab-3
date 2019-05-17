@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @include('admin.admin_panel.panel_usuarios')
+@include('admin.admin_panel.panel_propuestas')
 @include('admin.menu_admin')
 @section('content')
     <div class="container">
@@ -11,8 +12,8 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-body">
-
-                        @yield('tabla')
+                        @yield('tabla_usuarios')
+                        @yield('tabla_propuestas')
                     </div>
                 </div>
             </div>
