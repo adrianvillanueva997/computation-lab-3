@@ -31,4 +31,10 @@ class UserPanelController extends Controller
         $propuestas=Proposal::where('id_user', $id)->get();
         return view('user.user_panel.verpropuesta')-> with('propuestas', $propuestas);
     }
+    public function modificar_propuesta($id){
+        $propuesta = Proposal::find($id);
+        #$name=$request->input('name');
+        #return view('user.user_panel.modificarpropuesta')-> with('name', $name);
+        return view('user.user_panel.modificarpropuesta')->with(compact('propuesta'));
+    }
 }
