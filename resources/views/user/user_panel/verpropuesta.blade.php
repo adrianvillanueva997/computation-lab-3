@@ -21,7 +21,8 @@
                                 <td>{!! $propuesta->name !!}</td>
                                 <td>{!! $propuesta->description !!}</td>
                                 <td>{!! $propuesta->tags !!}</td>
-                                <td><a href="/formulariomodificacion_propuesta/{{$propuesta->id}}" class="btn btn-primary">Editar</a></td>
+                                <td><a href="/formulariomodificacion_propuesta/{{$propuesta->id}}" class="btn btn-primary">Editar</a>
+                                <a href="/deletepropuesta/{{$propuesta->id}}" class="btn btn-warning">Eliminar</a></td>
                             </tr>
                         @endforeach
                     </tbody>

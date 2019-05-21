@@ -28,5 +28,9 @@ class PropuestaControlador extends Controller
         $proposal->save();
         return back()->with('notification','Propuesta creada correctamente');
     }
-
+    public function delete_propuesta ($id){
+        $proposal = Proposal::find($id);
+        $proposal->delete();
+        return back();
+    }
 }
