@@ -4,7 +4,7 @@
 <div class="row">
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                    <form action="/subir_propuesta" method="POST">
+                    <form action="/subir_propuesta" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
                         <div class="form-group">
                             <label for="nombre_propuesta">Nombre de propuesta</label>
@@ -20,7 +20,7 @@
                         </div>
                         <div class="form-group">
                         <label for="cargar_imagen">Cargar imagen/es</label>
-                        <input type="file" class="form-control-file" id="cargar_imagen">
+                        <input type="file" class="form-control-file" name="image" id="image">
                         </div>
                         <div class="form-group">
                             <label for="etiquetas">Etiquetas (separadas por comas)</label>
