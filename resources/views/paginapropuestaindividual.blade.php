@@ -63,17 +63,16 @@
         <!-- /.card -->
         </div>
       </div>
-      <!-- /.col-lg-3 -->
-
+      <!-- /.col-lg-3 --> 
       <div class="col-lg-9">
 
         <div class="card mt-4">
-          <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+          <img class="card-img-top" src="{{asset("images/$propuesta->image_path")}}" alt="">
           <div class="card-body">
-            <h3 class="card-title">Titulo del Proyecto</h3>
+            <h3 class="card-title">{{$propuesta->name}}</h3>
             <p class="font-weight-bold">Habilidades que abarca el usuario</p>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-            <h4>$24.99</h4>
+            <p class="card-text">{{$propuesta->small_description}}</p>
+            <h4>{{$propuesta->coste}}</h4>
             <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
             4.0 stars
           </div>
@@ -86,13 +85,13 @@
           </div>
           <div class="card-body">
            <p class="font-italic">Descripcion</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Publicado por Anonimo el 04/05/19</small>
+            <p>{{$propuesta->description}}</p>
             <hr>
             <p class="font-italic">Detalles del pedido</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <p>{{$propuesta->detalles_pedido}}</p>
             <small class="text-muted">Publicado por Anonimo el 04/05/19</small>
-<!--
+            <!--
+
             <hr>
             <a href="#" class="btn btn-success">Leave a Review</a>
 -->
