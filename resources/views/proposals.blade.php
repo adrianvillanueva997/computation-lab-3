@@ -60,7 +60,7 @@
   @foreach($propuestas as $propuesta)
     <div class="col-lg-4 col-sm-6 mb-4">
       <div class="card h-100">
-        <a href="individualServicePage.html"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+        <a href="individualServicePage.html"><img class="card-img-top" src="{{asset("images/$propuesta->image_path")}}" alt=""></a>
         <div class="card-body">
           <h4 class="card-title">
             <a href="/propuesta/{{$propuesta->id}}">{{$propuesta->name}}</a>
