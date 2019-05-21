@@ -20,6 +20,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/propuestas','HomeController@proposals')->name('propuestas');
+Route::get('/propuesta/{id}', 'ProposalControler@propuestaprueba');
 
 Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], static function () {
     Route::get('/admin_home', 'AdminPanelController@index');

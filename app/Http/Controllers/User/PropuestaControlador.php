@@ -28,4 +28,5 @@ class PropuestaControlador extends Controller
         $proposal->save();
         return back()->with('notification','Propuesta creada correctamente');
     }
+
 }

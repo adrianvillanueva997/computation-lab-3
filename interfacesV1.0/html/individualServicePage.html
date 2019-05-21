@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--shrink-to fit=no-->
+    <!-- css links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../Footer-with-logo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css">
+    
+    <!-- js scripts -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <script src="javascript.js"></script>
+    
+    <title>Individual Page</title>
+    
+</head>
+<body>
+
+<!--Container (section Navbar)-->
+<nav class="navbar navbar-expand-lg px-5">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="navbar-brand" href="../index.html">Logo</a>
+    </li>
+  </ul>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav list-group-horizontal ml-auto">
+<!-- En principio estos dos items "sobran"
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#help">Help</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#catalogo">Catalogo</a>
+        </li>
+-->
+        <li class="nav-item mx-2">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="">Perfil</a>
+        </li>
+<!--        ModalPerfil -->
+       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Informacion del usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+<!--              Fomrulario -->
+                <form class="form" role="form" autocomplete="off">
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" value="Adri">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" value="Guapo">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="email" value="email@gmail.com">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Company</label>
+                        <div class="col-lg-9">
+                            <textarea class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Website</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="url" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Time Zone</label>
+                        <div class="col-lg-9">
+                            <select id="user_time_zone" class="form-control" size="0">
+                                <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                                <option value="Alaska">(GMT-09:00) Alaska</option>
+                                <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                                <option value="Arizona">(GMT-07:00) Arizona</option>
+                                <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                                <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp;Canada)</option>
+                                <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                                <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" value="AdriJuapo">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="password" value="11111122333">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Confirm</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="password" value="11111122333">
+                        </div>
+                    </div>
+<!--
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label"></label>
+                        <div class="col-lg-9">
+                            <input type="reset" class="btn btn-secondary" value="Cancelar">
+                            <input type="button" class="btn btn-primary" value="Guardar cambios">
+                        </div>
+                    </div>
+-->
+                </form>
+<!--             /Formulario -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+<!--       /ModalPerfil-->
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#contact">Contacta</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#entrar">Entra</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="register.html">Registrarse</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<!-- Home -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+<!--        <h1 class="my-3">Perfil</h1>-->
+        <div class="list-group">
+        <div class="card card-outline-secondary my-4">
+          <div class="card-header">
+            <h3>Perfil</h3>
+          </div>
+          <div class="card-body">
+            <div class="col-sm-12 text-center">
+              <span class="fa fa-css3" id="logo-small"></span>
+              <h4 class="text-center"><a href="#">#Username</a></h4>
+              <p class="text-center">Breve descripcion (posible)</p>
+            </div>
+            <hr>
+            <p class="font-weight-bold">Informacion Personal</p>
+            <p>Nombre: <span>Nombre Freelancer</span></p>
+            <p>Edad: <span>69</span></p>
+            <p>Origen: <span>Aleman</span></p>
+            <p>Ocupacion: <span>NiNi</span></p>
+            <hr>
+            <p class="font-weight-bold">Habilidades</p>
+            <p>PHP, Laravel, MySQL, JavaScript, Angular, React</p>
+<!--
+            <hr>
+            <a href="#" class="btn btn-success">Leave a Review</a>
+-->
+          </div>
+        </div>
+        <!-- /.card -->
+        </div>
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div class="card mt-4">
+          <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+          <div class="card-body">
+            <h3 class="card-title">Titulo del Proyecto</h3>
+            <p class="font-weight-bold">Habilidades que abarca el usuario</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
+            <h4>$24.99</h4>
+            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+            4.0 stars
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <div class="card card-outline-secondary my-4">
+          <div class="card-header font-weight-bold">
+            Sobre el Proyecto
+          </div>
+          <div class="card-body">
+           <p class="font-italic">Descripcion</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <small class="text-muted">Publicado por Anonimo el 04/05/19</small>
+            <hr>
+            <p class="font-italic">Detalles del pedido</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <small class="text-muted">Publicado por Anonimo el 04/05/19</small>
+<!--
+            <hr>
+            <a href="#" class="btn btn-success">Leave a Review</a>
+-->
+          </div>
+        </div>
+        <!-- /.card -->
+        
+        <div class="card card-outline-secondary my-4">
+            <div class="card-header font-weight-bold">
+                Contactar
+            </div>
+            <div class="card-body">
+                <div id="contact" class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="row">
+                        <div class="col-sm-6 form-group">
+                          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                        </div>
+                      </div>
+                      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+                      <div class="row">
+                        <div class="col-sm-12 form-group">
+                          <button class="btn btn-default pull-right" type="submit" id="color">Send</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+
+  </div>
+  <!-- /.container -->
+<!-- /Home -->
+  
+  <!--Container (section FOOTER)-->
+<footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Entrar</a></li>
+                        <li><a href="#">Registrarse</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Contactar</a></li>
+                        <li><a href="#">Testimonios</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 info">
+                    <h5>Informacion</h5>
+                    <p> Lorem ipsum dolor amet, consectetur adipiscing elit. Etiam consectetur aliquet aliquet. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                </div>
+            </div>
+        </div>
+        <div class="second-bar">
+           <div class="container">
+                <h2 class="logo"><a href="../index.html"> LOGO </a></h2>
+                <div class="social-icons">
+                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

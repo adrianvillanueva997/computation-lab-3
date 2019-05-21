@@ -10,4 +10,9 @@ class ProposalControler extends Controller
     public function store(Request $request){
         
     }
+
+    
+    public function propuestaprueba(){
+        return view('paginapropuestaindividual');
+    }
 }
