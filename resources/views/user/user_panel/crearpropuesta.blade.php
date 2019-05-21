@@ -11,6 +11,10 @@
                             <input type="text" class="form-control" name="name" id="nombre_propuesta" placeholder="Propuesta">
                         </div>
                         <div class="form-group">
+                            <label for="descripcion">Pequeña descripcion</label>
+                            <textarea class="form-control" name="small_description" id="small_descripcion" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="descripcion">Descripcion propuesta</label>
                             <textarea class="form-control" name="description" id="descripcion" rows="3"></textarea>
                         </div>
@@ -22,7 +26,14 @@
                             <label for="etiquetas">Etiquetas (separadas por comas)</label>
                             <input type="text" class="form-control" name="tags" id="etiquetas" placeholder="Etiquetas">
                         </div>
-                        
+                        <div class="form-group">
+                            <label for="etiquetas">Coste de la propuesta</label>
+                            <input type="text" class="form-control" name="coste" id="coste" placeholder="Etiquetas">
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Detalles de la propuesta</label>
+                            <textarea class="form-control" name="detalles_propuesta" id="detalles_propuesta" rows="3"></textarea>
+                        </div>
                         
                         <button type="submit" class="btn btn-primary btn-block">Aceptar</button>
                     </form>

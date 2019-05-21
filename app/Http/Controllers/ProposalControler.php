@@ -12,7 +12,8 @@ class ProposalControler extends Controller
     }
 
     
-    public function propuestaprueba(){
-        return view('paginapropuestaindividual');
+    public function propuestaprueba($id){
+        $propuesta = Proposal::find($id);
+        return view('paginapropuestaindividual')->with(compact('propuesta'));;
     }
 }
