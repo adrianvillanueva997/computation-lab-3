@@ -47,13 +47,13 @@
             </div>
             <hr>
             <p class="font-weight-bold">Informacion Personal</p>
-            <p>Nombre: <span>Nombre Freelancer</span></p>
-            <p>Edad: <span>69</span></p>
-            <p>Origen: <span>Aleman</span></p>
-            <p>Ocupacion: <span>NiNi</span></p>
+            <p>Nombre: <span>{{$user->name}}</span></p>
+            <p>Edad: <span>{{$user->age}}</span></p>
+            <p>Origen: <span>{{$user->origen}}</span></p>
+            <p>Ocupacion: <span>{{$user->ocupation}}</span></p>
             <hr>
             <p class="font-weight-bold">Habilidades</p>
-            <p>PHP, Laravel, MySQL, JavaScript, Angular, React</p>
+            <p>{{$user->habilities}}</p>
 <!--
             <hr>
             <a href="#" class="btn btn-success">Leave a Review</a>
