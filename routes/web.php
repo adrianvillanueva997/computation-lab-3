@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,12 @@ Route::get('/propuesta/{id}', 'ProposalControler@propuestaprueba');
 Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], static function () {
     Route::get('/admin_home', 'AdminPanelController@index');
     Route::get('/panel_usuarios', 'AdminPanelController@user_panel');
-    Route::get('/editar_usuario', 'AdminPanelController@user_panel');
+    Route::get('/editar_usuario/{id}', 'AdminPanelController@user_panel');
+    Route::get('/eliminar_usuario/{id}', 'AdminPanelController@user_panel');
+    Route::get('/editar_propuesta/{id}', 'AdminPanelController@user_panel');
+    Route::get('/eliminar_propuesta/{id}', 'AdminPanelController@user_panel');
+
+
 });
 
 Route::group(['middleware' => 'user', 'namespace' => 'User'], static function () {
@@ -34,9 +40,9 @@ Route::group(['middleware' => 'user', 'namespace' => 'User'], static function ()
     Route::post('/subir_propuesta', 'PropuestaControlador@insert');
     Route::get('/verpropuesta', 'UserPanelController@ver_propuesta');
     Route::get('/mensaje', 'UserPanelController@mensaje');
-    Route::get('/formulariomodificacion_propuesta/{id}','UserPanelController@modificar_propuesta');
-    Route::post('/updatepropuesta/{id}','PropuestaControlador@update_propuesta');
-    Route::get('/deletepropuesta/{id}','PropuestaControlador@delete_propuesta');
+    Route::get('/formulariomodificacion_propuesta/{id}', 'UserPanelController@modificar_propuesta');
+    Route::post('/updatepropuesta/{id}', 'PropuestaControlador@update_propuesta');
+    Route::get('/deletepropuesta/{id}', 'PropuestaControlador@delete_propuesta');
 });
 
 

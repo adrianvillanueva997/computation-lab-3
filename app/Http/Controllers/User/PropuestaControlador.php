@@ -20,11 +20,14 @@ class PropuestaControlador extends Controller
         
 
         $proposal = new Proposal();
+        $id=Auth::user()->getId();
         $proposal->name= $request->input('name');
         $proposal->description= $request->input('description');
         $proposal->tags= $request->input('tags');
-        $proposal->id_user=Auth::user()->getId();
-
+        $proposal->id_user= $id;
+        $proposal->small_description= $request->input('small_description');
+        $proposal->coste= $request->input('coste');
+        $proposal->detalles_pedido= $request->input('detalles_propuesta');
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
         request()->image->move(public_path('images'), $imageName);
         $proposal->image_path=$imageName;
@@ -37,6 +40,9 @@ class PropuestaControlador extends Controller
         $proposal->name= $request->input('name');
         $proposal->description= $request->input('description');
         $proposal->tags= $request->input('tags');
+        $proposal->detalles_pedido= $request->input('detalles_propuesta');
+        $proposal->coste= $request->input('coste');
+        $proposal->small_description= $request->input('small_description');
         $proposal->save();
         return back()->with('notification','Propuesta creada correctamente');
     }
