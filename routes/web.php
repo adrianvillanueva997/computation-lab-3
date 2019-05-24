@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', static function () {
     return view('welcome');
 });
-Route::get('/propuestas','ProposalControler@proposals')->name('propuestas');
+Route::get('/propuestas', 'ProposalControler@proposals')->name('propuestas');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -26,8 +26,9 @@ Route::get('/propuesta/{id}', 'ProposalControler@propuestaprueba');
 Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], static function () {
     Route::get('/admin_home', 'AdminPanelController@index');
     Route::get('/panel_usuarios', 'AdminPanelController@user_panel');
-    Route::get('/editar_usuario/{id}', 'AdminPanelController@user_panel');
+    Route::get('/editar_usuario/{id}', 'AdminPanelController@editar_usuario');
     Route::get('/eliminar_usuario/{id}', 'AdminPanelController@user_panel');
+    Route::post('/eliminar_usuario/{id}', 'AdminPanelController@user_panel');
     Route::get('/editar_propuesta/{id}', 'AdminPanelController@user_panel');
     Route::get('/eliminar_propuesta/{id}', 'AdminPanelController@user_panel');
 
