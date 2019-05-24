@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', static function () {
     return view('welcome');
 });
-
+Route::get('/propuestas','ProposalControler@proposals')->name('propuestas');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/propuestas','HomeController@proposals')->name('propuestas');
+
 Route::get('/propuesta/{id}', 'ProposalControler@propuestaprueba');
 
 Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], static function () {

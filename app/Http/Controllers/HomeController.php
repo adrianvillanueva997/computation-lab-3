@@ -27,8 +27,5 @@ class HomeController extends Controller
         return view('welcome');
     }
 
-    public function proposals(){
-        $propuestas = Proposal::all();
-        return view('proposals')->with(compact('propuestas'));
-    }
+    
 }

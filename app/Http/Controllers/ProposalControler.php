@@ -11,6 +11,11 @@ class ProposalControler extends Controller
         
     }
 
+    public function proposals(){
+        $propuestas = Proposal::all();
+        return view('proposals')->with(compact('propuestas'));
+    }
+
     
     public function propuestaprueba(){
         return view('paginapropuestaindividual');
