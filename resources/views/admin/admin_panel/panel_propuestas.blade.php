@@ -5,21 +5,24 @@
             <tr>
                 <th>ID</th>
                 <th>Usuario</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Tags</th>
                 <th>Creado</th>
                 <th>Última modificación</th>
+                <th>Nombre</th>
                 <th>Modificar</th>
                 <th>Eliminar</th>
             </tr>
-            @for($i=0;$i<$propuestas;$i++)
+            @foreach($propuestas as $propuesta)
+
                 <tr>
-                    <td>asdasda</td>
-                    <td><a href="#"><img src="/img/edit_icon_admin.png"></a></td>
-                    <td><a href=""><img src="/img/delete_icon_admin.png"></a></td>
+                    <td>{{$propuesta->id}}</td>
+                    <td>{{$propuesta->id_user}}</td>
+                    <td>{{$propuesta->created_at}}</td>
+                    <td>{{$propuesta->updated_at}}</td>
+                    <td>{{$propuesta->name}}</td>
+                    <td><a href="/editar_propuesta/{{$propuesta->id}}"><img src="/img/edit_icon_admin.png" alt="Editar"></a></td>
+                    <td><a href="eliminar_propuesta/{{$propuesta->id}}"><img src="/img/delete_icon_admin.png" alt="Eliminar"></a></td>
                 </tr>
-            @endfor
+            @endforeach
         </table>
     </div>
 @endsection

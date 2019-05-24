@@ -17,8 +17,8 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->role}}</td>
-                    <td><a href="#"><img src="/img/edit_icon_admin.png"></a></td>
-                    <td><a href=""><img src="/img/delete_icon_admin.png"></a></td>
+                    <td><a href="/editar_usuario/{{$user->id}}"><img src="/img/edit_icon_admin.png" alt="Editar"></a></td>
+                    <td><a href="/eliminar_usuario/{{$user->id}}"><img src="/img/delete_icon_admin.png" alt="Eliminar"></a></td>
                 </tr>
             @endforeach
         </table>
