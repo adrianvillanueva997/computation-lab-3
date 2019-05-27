@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Proposal;
+use App\User;
 use Auth;
 
 
@@ -36,5 +37,22 @@ class UserPanelController extends Controller
         #$name=$request->input('name');
         #return view('user.user_panel.modificarpropuesta')-> with('name', $name);
         return view('user.user_panel.modificarpropuesta')->with(compact('propuesta'));
+    }
+    public function formulario_update_user(){
+        $id=Auth::user()->getId();
+        $user=User::find($id);
+        return view('user.user_panel.ajustes')->with(compact('user'));
+    }
+    public function update_user(Request $request){
+        $id=Auth::user()->getId();
+        $user=User::find($id);
+        $user->name= $request->input('name');
+        $user->description= $request->input('description');
+        $user->email= $request->input('email');
+        $user->origen= $request->input('origen');
+        $user->ocupation= $request->input('ocupation');
+        $user->habilities= $request->input('habilities');
+        $user->save();
+        return back()->with('notification','Propuesta creada correctamente');
     }
 }

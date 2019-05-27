@@ -12,7 +12,7 @@
                 <a href="/mensaje" class="list-group-item list-group-item-action bg-light">Mensajes</a>
                 <a href="/verpropuesta" class="list-group-item list-group-item-action bg-light">Propuestas</a>
                 <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Reportes</a> -->
-                <a href="#" class="list-group-item list-group-item-action bg-light">Ajustes</a>
+                <a href="/formularioupdateuser" class="list-group-item list-group-item-action bg-light">Ajustes</a>
               </div>
           </div>
         </div>
