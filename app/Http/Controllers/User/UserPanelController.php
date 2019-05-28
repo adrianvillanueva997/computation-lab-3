@@ -52,6 +52,7 @@ class UserPanelController extends Controller
         $user->origen= $request->input('origen');
         $user->ocupation= $request->input('ocupation');
         $user->habilities= $request->input('habilities');
+        $user->age= $request->input('age');
         $user->save();
         return back()->with('notification','Propuesta creada correctamente');
     }
