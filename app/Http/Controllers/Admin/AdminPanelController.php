@@ -20,5 +20,11 @@ class AdminPanelController extends Controller
         return view('admin.admin_panel.panel_usuarios');
     }
 
+    public function editar_usuario($user_id)
+    {
+        $user = User::find($user_id);
+        return view('admin.admin_panel.editar_usuario')->with(compact('user'));
+    }
+
 
 }
