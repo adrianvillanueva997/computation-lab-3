@@ -23,6 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/propuesta/{id}', 'ProposalControler@propuestaprueba');
 
+Route::post('/buscar_propuestas', 'ProposalControler@buscarpropuestas');
+
+
 Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], static function () {
     Route::get('/admin_home', 'AdminPanelController@index');
     Route::get('/panel_usuarios', 'AdminPanelController@user_panel');
@@ -43,6 +46,8 @@ Route::group(['middleware' => 'user', 'namespace' => 'User'], static function ()
     Route::get('/formulariomodificacion_propuesta/{id}', 'UserPanelController@modificar_propuesta');
     Route::post('/updatepropuesta/{id}', 'PropuestaControlador@update_propuesta');
     Route::get('/deletepropuesta/{id}', 'PropuestaControlador@delete_propuesta');
+    Route::post('/enviar_comentario/{id}', 'PropuestaControlador@enviar_comentario_propuesta');
+
 });
 
 

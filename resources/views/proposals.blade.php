@@ -1,4 +1,5 @@
 @include('barramenu')
+@include('searchbar')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,20 +34,7 @@
 <div class="jumbotron text-center">
   <h1>Web Developement</h1> 
   <p>El mejor portal freelancer de Espanha!</p>
-  <div class="row">
-      <div class="col-md-6 offset-md-4 ">
-          <form class="form-inline center-block">
-            <div class="input-group">
-              <input type="search" class="form-control" size="50" placeholder="Search..." required>
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-danger">
-                    <i class="fa fa-search" style='font-size:20px'></i>
-                </button>
-              </div>
-            </div>
-  </form>
-      </div>
-  </div>
+@yield('searchbar')
   
 </div>
 

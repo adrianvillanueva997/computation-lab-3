@@ -42,7 +42,7 @@
           <div class="card-body">
             <div class="col-sm-12 text-center">
               <span class="fa fa-css3" id="logo-small"></span>
-              <h4 class="text-center"><a href="#">#Username</a></h4>
+              <h4 class="text-center"><a href="#">{{$user->name}}</a></h4>
               <p class="text-center">Breve descripcion (posible)</p>
             </div>
             <hr>
@@ -73,9 +73,7 @@
             <p class="font-weight-bold">Habilidades que abarca el usuario</p>
             <p class="card-text">{{$propuesta->small_description}}</p>
             <h4>{{$propuesta->coste}}</h4>
-            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            4.0 stars
-          </div>
+            <input id="input-id" type="text" class="rating" data-size="lg" >
         </div>
         <!-- /.card -->
 
@@ -89,7 +87,24 @@
             <hr>
             <p class="font-italic">Detalles del pedido</p>
             <p>{{$propuesta->detalles_pedido}}</p>
-            <small class="text-muted">Publicado por Anonimo el 04/05/19</small>
+            <!--
+
+            <hr>
+            <a href="#" class="btn btn-success">Leave a Review</a>
+-->
+          </div>
+        </div>
+
+        <div class="card card-outline-secondary my-4">
+          <div class="card-header font-weight-bold">
+            Opiniones
+          </div>
+          <div class="card-body">
+            @foreach ($comments as $comment)
+            <p class="font-italic">{{$comment->title}}</p>
+            <p>{{$comment->text_review}}</p>
+            <small class="text-muted">Publicado por {{$user->name}} el {{$comment->created_at}}</small>
+            @endforeach
             <!--
 
             <hr>
@@ -105,24 +120,25 @@
             </div>
             <div class="card-body">
                 <div id="contact" class="container-fluid">
+                @guest
+                <div class="row">
+                <p>Necesitas estar <a href="/register">registrado</a> o <a href="/login">iniciar sesión</a> para poder comentar</p>
+                @else
                   <div class="row">
                     <div class="col-sm-12">
-                      <div class="row">
-                        <div class="col-sm-6 form-group">
-                          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                        </div>
-                        <div class="col-sm-6 form-group">
-                          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                        </div>
-                      </div>
-                      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+                    <form action="/enviar_comentario/{{$propuesta->id}}" method="POST" >
+                    {{ csrf_field() }}
+                      <input class="form-control" id="title" name="title" placeholder="Título" type="text" required>
+                      <textarea class="form-control" id="comments" name="comments" placeholder="Deja aquí tu comentario" rows="5"></textarea><br>
                       <div class="row">
                         <div class="col-sm-12 form-group">
-                          <button class="btn btn-default pull-right" type="submit" id="color">Send</button>
+                          <button class="btn btn-default pull-right" type="submit" id="color">Enviar</button>
+                    </form>
                         </div>
                       </div>
                     </div>
                   </div>
+                @endguest
                 </div>
             </div>
         </div>
