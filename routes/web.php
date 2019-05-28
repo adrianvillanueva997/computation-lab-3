@@ -45,7 +45,7 @@ Route::group(['middleware' => 'user', 'namespace' => 'User'], static function ()
     Route::post('/updatepropuesta/{id}', 'PropuestaControlador@update_propuesta');
     Route::get('/deletepropuesta/{id}', 'PropuestaControlador@delete_propuesta');
     Route::get('/formularioupdateuser', 'UserPanelController@formulario_update_user');
-    Route::post('/updateuser', 'PropuestaControlador@update_user');
+    Route::post('/updateuser', 'UserPanelController@update_user');
 });
 
 
