@@ -89,7 +89,7 @@
             <hr>
             <p class="font-italic">Detalles del pedido</p>
             <p>{{$propuesta->detalles_pedido}}</p>
-            <small class="text-muted">Publicado por Anonimo el 04/05/19</small>
+            <small class="text-muted">Publicado por {{$user->name}} el 04/05/19</small>
             <!--
 
             <hr>
