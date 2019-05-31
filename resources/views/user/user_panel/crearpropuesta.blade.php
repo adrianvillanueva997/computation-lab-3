@@ -35,10 +35,13 @@
                             <textarea class="form-control" name="detalles_propuesta" id="detalles_propuesta" rows="3"></textarea>
                         </div>
                         <div class="form-group">
+                        <label for="ategoria">Categoria</label>
                             <input name="categoria" list="categorias" />
-                            <datalist id="categorias">
-                                <option value="Naples" />
-                            </datalist>
+                            <select id="categorias">
+                                @foreach($categories as $category)
+                                    <option value="{{$category->text_category}}" />
+                                @endforeach
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Aceptar</button>
                     </form>

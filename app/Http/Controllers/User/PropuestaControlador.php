@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Proposal;
 use App\Review;
 use Auth;
+use App\Category;
 
 class PropuestaControlador extends Controller
 {
@@ -32,6 +33,8 @@ class PropuestaControlador extends Controller
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
         request()->image->move(public_path('images'), $imageName);
         $proposal->image_path=$imageName;
+        $categoria = Category::find($request->input('categoria'));
+        $proposal->id_categoria=$categoria->id;
         $proposal->save();
         return back()->with('notification','Propuesta creada correctamente');
     }
@@ -44,6 +47,8 @@ class PropuestaControlador extends Controller
         $proposal->detalles_pedido= $request->input('detalles_propuesta');
         $proposal->coste= $request->input('coste');
         $proposal->small_description= $request->input('small_description');
+        $categoria = Category::find($request->input('categoria'));
+        $proposal->id_categoria=$categoria->id;
         $proposal->save();
         return back()->with('notification','Propuesta creada correctamente');
     }
