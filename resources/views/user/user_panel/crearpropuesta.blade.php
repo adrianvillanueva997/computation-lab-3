@@ -34,7 +34,12 @@
                             <label for="descripcion">Detalles de la propuesta</label>
                             <textarea class="form-control" name="detalles_propuesta" id="detalles_propuesta" rows="3"></textarea>
                         </div>
-                        
+                        <div class="form-group">
+                            <input name="categoria" list="categorias" />
+                            <datalist id="categorias">
+                                <option value="Naples" />
+                            </datalist>
+                        </div>
                         <button type="submit" class="btn btn-primary btn-block">Aceptar</button>
                     </form>
                 </div>
