@@ -60,34 +60,12 @@
     </div>
   @endforeach
   <!-- /.row -->
-  
+  </div>
+  <div class="row">
+  {{$propuestas->links()}}
+  </div>
 
-  <!-- Pagination ¡ESTO HA SIDO COPIA/PEGA. REACER LA PAGINACION-->
-  <ul class="pagination justify-content-center">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Anterior</span>
-          </a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">1</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">2</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">3</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Siguiente</span>
-          </a>
-    </li>
-  </ul>
 
-</div>
 <!-- /.container -->
 
 <!--Container (section FOOTER)-->

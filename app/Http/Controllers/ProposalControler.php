@@ -13,7 +13,7 @@ class ProposalControler extends Controller
     }
 
     public function proposals(){
-        $propuestas = Proposal::all();
+        $propuestas = Proposal::paginate(9);
         return view('proposals')->with(compact('propuestas'));
     }
     
@@ -27,12 +27,12 @@ class ProposalControler extends Controller
 
     public function buscarpropuestas(Request $request){
         $textobusqueda = $request->input('searchtext');
-        $propuestas = Proposal::where('name','LIKE','%'.$textobusqueda.'%')->orWhere('description','LIKE','%'.$textobusqueda.'%')->orWhere('tags','LIKE','%'.$textobusqueda.'%')->get();
+        $propuestas = Proposal::where('name','LIKE','%'.$textobusqueda.'%')->orWhere('description','LIKE','%'.$textobusqueda.'%')->orWhere('tags','LIKE','%'.$textobusqueda.'%')->get()->paginate(9);
         return view('proposals')->with(compact('propuestas'));
     }
 
     public function filtrarporcategoria($id){
-        $propuestas = Proposal::where('category_id',$id)->limit(6)->get();
+        $propuestas = Proposal::where('category_id',$id)->get()->paginate(9);
         return view('proposals')->with(compact('propuestas'));
     }
    
