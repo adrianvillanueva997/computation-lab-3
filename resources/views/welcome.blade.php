@@ -44,39 +44,13 @@
   <h4>Lo que ofrecemos</h4>
   <br>
   <div class="row">
+  @foreach($categories as $category)
     <div class="col-sm-4">
       <span class="fa fa-css3" id="logo-small"></span>
-      <h4><a href="html/servicePage.html">Web Dev</a></h4>
+      <h4><a href="propuestas/categoria/{{$category->id}}">{{$category->text_category}}</a></h4>
       <p>Breve descripcion (posible)</p>
     </div>
-    <div class="col-sm-4">
-      <span class="fa fa-css3" id="logo-small"></span>
-      <h4>Mobile Dev</h4>
-      <p>Breve descripcion (posible)</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="fa fa-css3" id="logo-small"></span>
-      <h4>Photoshop</h4>
-      <p>Breve descripcion (posible)</p>
-    </div>
-  </div>
-  <br><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <span class="fa fa-css3" id="logo-small"></span>
-      <h4>Logo</h4>
-      <p>Breve descripcion (posible)</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="fa fa-css3" id="logo-small"></span>
-      <h4>Marketing</h4>
-      <p>Breve descripcion (posible)</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="fa fa-css3" id="logo-small"></span>
-      <h4>Blog</h4>
-      <p>Breve descripcion (posible)</p>
-    </div>
+  @endforeach
   </div>
 </div>
 

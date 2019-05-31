@@ -31,5 +31,9 @@ class ProposalControler extends Controller
         return view('proposals')->with(compact('propuestas'));
     }
 
+    public function filtrarporcategoria($id){
+        $propuestas = Proposal::where('category_id',$id)->limit(6)->get();
+        return view('proposals')->with(compact('propuestas'));
+    }
    
 }

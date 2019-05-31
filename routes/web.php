@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', static function () {
-    return view('welcome');
+    $categories=Category::All();
+    return view('welcome')->with(compact('categories'));
 });
 Route::get('/propuestas', 'ProposalControler@proposals')->name('propuestas');
 Auth::routes();
@@ -24,6 +26,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/propuesta/{id}', 'ProposalControler@propuestaprueba');
 
 Route::post('/buscar_propuestas', 'ProposalControler@buscarpropuestas');
+
+Route::get('/propuestas/categoria/{id}', 'ProposalControler@filtrarporcategoria');
 
 
 Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], static function () {
