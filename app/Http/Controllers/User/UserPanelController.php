@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Proposal;
 use App\User;
+use App\Category;
 use Auth;
 
 
@@ -21,8 +22,9 @@ class UserPanelController extends Controller
     }
     public function crear_propuesta()
     {
-        return view('user.user_panel.crearpropuesta');
-        
+        $categories=Category::All();
+        return view('user.user_panel.crearpropuesta')->with(compact('categories'));
+
     }
     public function mensaje(){
         return view('user.user_panel.mensajes');
@@ -36,7 +38,8 @@ class UserPanelController extends Controller
         $propuesta = Proposal::find($id);
         #$name=$request->input('name');
         #return view('user.user_panel.modificarpropuesta')-> with('name', $name);
-        return view('user.user_panel.modificarpropuesta')->with(compact('propuesta'));
+        $categories=Category::All();
+        return view('user.user_panel.modificarpropuesta')->with(compact('propuesta','categories'));
     }
     public function formulario_update_user(){
         $id=Auth::user()->getId();
