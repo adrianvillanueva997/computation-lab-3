@@ -31,12 +31,21 @@
 
 
 <!--Container (section Home)-->
-<div class="jumbotron text-center">
+<!--<div class="jumbotron text-center">
   <h1>FreelancerSpain</h1> 
   <p>¡El mejor portal freelancer de España!</p>
 @yield('searchbar')
   
 </div>
+-->
+
+<section class="hero">
+    <div class="hero-inner">
+      <h1>FreelancerSpain</h1>
+      <h3>¡El mejor portal freelancer de España!</h3>
+      @yield('searchbar')
+    </div>
+  </section>
 
 <!--Container (section Catalogo)-->
 <div id="catalogo" class="container-fluid text-center">

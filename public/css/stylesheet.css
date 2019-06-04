@@ -1,9 +1,49 @@
-/*color de fondo: #4195d3*/
 
-.jumbotron {
+/* hero image*/
+.hero {
+    /* Tamanos */
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
+    color: white;
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(https://lasillarotarm.blob.core.windows.net.optimalcdn.com/images/2018/10/08/freelance.jpg);
+/*    https://s.yimg.com/uu/api/res/1.2/swwahVFhuHlu_WCfJ_bctA--~B/aD0xMDAwO3c9MTUwMDtzbT0xO2FwcGlkPXl0YWNoeW9u/http://media.zenfs.com/en_US/News/BGR_News/iphone-xs-eraser-wallpaper.jpg?quality=98&strip=all*/
+    
+    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.hero h1 {
+    /* Estilo txt */
+    font-size: 5em;
+    
+    /* Margenes   */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+/*color de fondo: #4195d3*/
+.jumbotron-fluid {
     background-color: #4195d3;
     color: #fff;
     padding: 100px 25px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
   }
 
 .bg-grey {
@@ -60,6 +100,11 @@
   line-height: 1.42857143 !important;
   letter-spacing: 4px;
   border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
 }
 
 .navbar li a, .navbar .navbar-brand {
@@ -81,6 +126,11 @@
 /*flip card*/
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.thumbnail{
+    display: inline-block;
+    float: none;
 }
 
 .flip-card {
@@ -112,13 +162,13 @@ body {
 }
 
 .flip-card-front {
-  background-color: #bbb;
+  background-color: white;
   color: black;
   z-index: 2;
 }
 
 .flip-card-back {
-  background-color: #2980b9;
+  background-color: lightgray;
   color: white;
   transform: rotateY(180deg);
   z-index: 1;

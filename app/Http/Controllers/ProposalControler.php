@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Proposal;
 use App\User;
 use App\Review;
+use App\Category;
 
 class ProposalControler extends Controller
 {
@@ -14,7 +15,8 @@ class ProposalControler extends Controller
 
     public function proposals(){
         $propuestas = Proposal::paginate(9);
-        return view('proposals')->with(compact('propuestas'));
+        $categories=Category::All();
+        return view('proposals')->with(compact('propuestas','categories'));
     }
     
     public function propuestaprueba($id){
@@ -26,14 +28,16 @@ class ProposalControler extends Controller
     }
 
     public function buscarpropuestas(Request $request){
+        $categories=Category::All();
         $textobusqueda = $request->input('searchtext');
-        $propuestas = Proposal::where('name','LIKE','%'.$textobusqueda.'%')->orWhere('description','LIKE','%'.$textobusqueda.'%')->orWhere('tags','LIKE','%'.$textobusqueda.'%')->get()->paginate(9);
-        return view('proposals')->with(compact('propuestas'));
+        $propuestas = Proposal::where('name','LIKE','%'.$textobusqueda.'%')->orWhere('description','LIKE','%'.$textobusqueda.'%')->orWhere('tags','LIKE','%'.$textobusqueda.'%')->paginate(9);
+        return view('proposals')->with(compact('propuestas','categories'));
     }
 
     public function filtrarporcategoria($id){
-        $propuestas = Proposal::where('category_id',$id)->get()->paginate(9);
-        return view('proposals')->with(compact('propuestas'));
+        $categories=Category::All();
+        $propuestas = Proposal::where('category_id',$id)->paginate(9);
+        return view('proposals')->with(compact('propuestas','categories'));
     }
    
 }

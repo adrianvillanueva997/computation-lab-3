@@ -100,9 +100,10 @@ div.content {
 <!--Container (section PORTFOLIO GALLERYU)-->
 <div class="sidebar">
   <a class="active" >Categorías</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+  @foreach($categories as $category)
+  <a href="/propuestas/categoria/{{$category->id}}">{{$category->text_category}}</a>
+  
+  @endforeach
 </div>
 <div class="container">
 

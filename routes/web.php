@@ -29,6 +29,8 @@ Route::post('/buscar_propuestas', 'ProposalControler@buscarpropuestas');
 
 Route::get('/propuestas/categoria/{id}', 'ProposalControler@filtrarporcategoria');
 
+Route::get('/perfil/{id}', 'UserProfileController@index');
+
 
 Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], static function () {
     Route::get('/admin_home', 'AdminPanelController@index');

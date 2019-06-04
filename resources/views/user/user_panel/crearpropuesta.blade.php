@@ -28,18 +28,17 @@
                         </div>
                         <div class="form-group">
                             <label for="etiquetas">Coste de la propuesta</label>
-                            <input type="text" class="form-control" name="coste" id="coste" placeholder="Etiquetas">
+                            <input type="text" class="form-control" name="coste" id="coste" placeholder="200€/h">
                         </div>
                         <div class="form-group">
                             <label for="descripcion">Detalles de la propuesta</label>
                             <textarea class="form-control" name="detalles_propuesta" id="detalles_propuesta" rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                        <label for="ategoria">Categoria</label>
-                            <input name="categoria" list="categorias" />
-                            <select id="categorias">
+                        <label for="categoria">Categoria</label>
+                            <select name="categoria" id="category">
                                 @foreach($categories as $category)
-                                    <option value="{{$category->text_category}}" />
+                                    <option value="{{$category->id}}">{{$category->text_category}}</option>
                                 @endforeach
                             </select>
                         </div>

@@ -42,7 +42,7 @@
           <div class="card-body">
             <div class="col-sm-12 text-center">
               <span class="fa fa-css3" id="logo-small"></span>
-              <h4 class="text-center"><a href="#">{{$user->name}}</a></h4>
+              <h4 class="text-center"><a href="/perfil/{{$user->id}}">{{$user->name}}</a></h4>
               <p class="text-center">Breve descripcion (posible)</p>
             </div>
             <hr>
