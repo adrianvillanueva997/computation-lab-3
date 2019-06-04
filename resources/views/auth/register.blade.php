@@ -60,7 +60,43 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
 
+                            <div class="col-md-6">
+                                <input id="age" type="text" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age" value="{{ old('age') }}" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+
+                            <div class="col-md-6">
+                            <textarea id="description" type="textarea" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ old('description') }}" required autofocus></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="origen" class="col-md-4 col-form-label text-md-right">{{ __('Origen') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="origen" type="text" class="form-control{{ $errors->has('origen') ? ' is-invalid' : '' }}" name="origen" value="{{ old('origen') }}" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="ocupation" class="col-md-4 col-form-label text-md-right">{{ __('Ocupation') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="ocupation" type="text" class="form-control{{ $errors->has('ocupation') ? ' is-invalid' : '' }}" name="ocupation" value="{{ old('ocupation') }}" required autofocus>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="habilities" class="col-md-4 col-form-label text-md-right">{{ __('Habilities') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea id="habilities" type="text" class="form-control{{ $errors->has('habilities') ? ' is-invalid' : '' }}" name="habilities" value="{{ old('habilities') }}" required autofocus></textarea>
+                            </div>
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
