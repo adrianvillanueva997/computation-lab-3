@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg px-5">
       <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="navbar-brand" href="/home">FreelancerSpain</a>
+            <a class="navbar-brand" href="/">FreelancerSpain</a>
         </li>
       </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

@@ -20,6 +20,11 @@ class CreateProposalsTable extends Migration
             $table->string('tags');
             $table->string('image');
             $table->integer('id_user');
+            $table->string('small_description');
+            $table->string('detalles_pedido');
+            $table->string('coste');
+            $table->string('image_path');
+            $table->integer('category_id');
             $table->timestamps();
         });
     }

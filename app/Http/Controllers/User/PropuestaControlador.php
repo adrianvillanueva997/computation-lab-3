@@ -20,7 +20,6 @@ class PropuestaControlador extends Controller
 
         ]);
         
-
         $proposal = new Proposal();
         $id=Auth::user()->getId();
         $proposal->name= $request->input('name');
@@ -33,9 +32,10 @@ class PropuestaControlador extends Controller
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
         request()->image->move(public_path('images'), $imageName);
         $proposal->image_path=$imageName;
-        $categoria = Category::find($request->input('categoria'));
-        $proposal->id_categoria=$categoria->id;
+        $categoria=$request->input('categoria');
+        $proposal->category_id=$categoria;
         $proposal->save();
+        
         return back()->with('notification','Propuesta creada correctamente');
     }
     
