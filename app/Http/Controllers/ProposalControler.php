@@ -7,6 +7,7 @@ use App\Proposal;
 use App\User;
 use App\Review;
 use App\Category;
+use App\Rating;
 
 class ProposalControler extends Controller
 {
@@ -21,10 +22,12 @@ class ProposalControler extends Controller
     
     public function propuestaprueba($id){
         $propuesta = Proposal::find($id);
+        $rating=  Rating::where('id_proposal',$id)->get();
+        $media = $rating->avg('rating');
         $comments = Review::where('id_proposal',$id)->get();
         $id_user=$propuesta->id_user;
         $user=User::find($id_user);
-        return view('paginapropuestaindividual')->with(compact('propuesta', 'user','comments'));;
+        return view('paginapropuestaindividual')->with(compact('propuesta', 'user','comments','media'));;
     }
 
     public function buscarpropuestas(Request $request){
