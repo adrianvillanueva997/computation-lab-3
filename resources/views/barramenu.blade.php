@@ -24,9 +24,15 @@
               <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
             </li>
             @else
+            @if(Auth::user()->isAdmin())
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/admin_home">Mi perfil</a>
+            </li>
+            @else
             <li class="nav-item mx-2">
               <a class="nav-link" href="/user_home">Mi perfil</a>
             </li>
+            @endif
             <li class="nav-item mx-2">
                                     <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

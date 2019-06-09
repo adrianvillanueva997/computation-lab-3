@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://emilio3000.gq'),
+    'url' => env('APP_URL', 'https://freelancerspain.tk'),
 
     'asset_url' => env('ASSET_URL', null),
 
