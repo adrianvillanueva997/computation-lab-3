@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"><!--shrink-to fit=no-->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- css links -->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/stylesheet.css">
-    <link rel="stylesheet" href="../Footer-with-logo.css">
+    <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/star-rating-svg.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Footer-with-logo.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css">
@@ -19,8 +22,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
-    <script src="javascript.js"></script>
+
     
+ 
+    <script src="{{ asset('js/javascript.js') }}"></script>
+    <script src="{{ asset('js/jquery.star-rating-svg.js') }}"></script>
     <title>Individual Page</title>
     
 </head>
@@ -73,7 +79,9 @@
             <p class="font-weight-bold">Habilidades que abarca el usuario</p>
             <p class="card-text">{{$propuesta->small_description}}</p>
             <h4>{{$propuesta->coste}}</h4>
-            <input id="input-id" type="text" class="rating" data-size="lg" >
+            <label for="input-1" class="control-label">Puntuar</label>
+            <div class="my-rating"></div>
+            
         </div>
         <!-- /.card -->
 
@@ -198,3 +206,35 @@
 
 </body>
 </html>
+
+<script>
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+$(".my-rating").starRating({
+    @if(is_null($media))
+    initialRating: 0,
+    @else
+    initialRating: {{$media}},
+    @endif
+    starSize: 25,
+    callback: function(currentRating, $el){
+      $.ajax({
+                    url: '/rating',
+                    type: 'POST',
+                    data: {
+                      id_proposal:{{$propuesta->id}},
+                      id_user:{{$user->id}},
+                      rating: currentRating
+                    }
+                }).done(function(response) {
+                  console.log("Se hizo algo")
+                })
+      alert('Has calificado con ' + currentRating);
+    }
+    
+});
+</script>

@@ -32,6 +32,8 @@ Route::get('/propuestas/categoria/{id}', 'ProposalControler@filtrarporcategoria'
 Route::get('/perfil/{id}', 'UserProfileController@index');
 
 
+
+
 Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], static function () {
     Route::get('/admin_home', 'AdminPanelController@index');
     Route::get('/panel_usuarios', 'AdminPanelController@user_panel');
@@ -57,6 +59,8 @@ Route::group(['middleware' => 'user', 'namespace' => 'User'], static function ()
 
     Route::get('/formularioupdateuser', 'UserPanelController@formulario_update_user');
     Route::post('/updateuser', 'UserPanelController@update_user');
+    Route::post('/rating','PropuestaControlador@calificar');
+    
 });
 
 

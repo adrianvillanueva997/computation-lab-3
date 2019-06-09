@@ -9,6 +9,7 @@ use App\Proposal;
 use App\Review;
 use Auth;
 use App\Category;
+use App\Rating;
 
 class PropuestaControlador extends Controller
 {
@@ -68,5 +69,16 @@ class PropuestaControlador extends Controller
         $review->save();
         return back()->with('notification','Comentario creado correctamente');
         
+    }
+
+    public function calificar(Request $request){
+        
+        $p_rating = new Rating();
+        $p_rating->id_proposal = $request['id_proposal'];
+        $p_rating->id_user = $request['id_user'];
+        $p_rating->rating = $request['rating'];
+        error_log($p_rating);
+        $p_rating->save();
+        return "Puntuado correctamente";
     }
 }
